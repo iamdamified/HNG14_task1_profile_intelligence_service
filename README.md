@@ -154,85 +154,118 @@ Response (201 Created)
     "created_at": "2026-04-17T14:22:10Z"
   }
 }
+```
 
-Get All Profiles:
+## Get All Profiles
 
-GET /api/profiles
+**GET** `/api/profiles`
 
-Optional query parameters:
+### Optional Query Parameters
+- `gender`
+- `country_id`
+- `age_group`
 
-gender
-country_id
-age_group
+**Response (200 OK)**
+```json
+{
+  "status": "success",
+  "list of data": { ... }
+}
+```
 
+---
 
-Get Single Profile:
+### Get Profile
 
-GET /api/profiles/{profile_id}
+**GET** `/api/profiles/{profile_id}`
 
+**Response (200 OK)**
+```json
+{
+  "status": "success",
+  "data": { ... }
+}
+```
 
+## Delete Profile
 
-Delete Profile:
+**DELETE** `/api/profiles/{profile_id}`
 
-DELETE /api/profiles/{profile_id}
+**Response:**  
+- `204 No Content` on successful deletion
 
-Returns 204 No Content on success.
+---
 
-
-
-
-Timestamp Standard:
+## Timestamp Standard
 
 All timestamps are:
+- UTC
+- ISO 8601 compliant
+- Stored and returned consistently
 
-UTC
-ISO 8601 compliant
-Stored and returned consistently
-
-Example:
+**Example:**
 
 2026-04-17T14:22:10Z
 
-External APIs Used:
 
-Gender prediction: genderize.io
-Age estimation: agify.io
-Nationality inference: nationalize.io
+---
+
+## External APIs Used
+
+- **Gender prediction:** genderize.io  
+- **Age estimation:** agify.io  
+- **Nationality inference:** nationalize.io  
 
 Graceful error handling is implemented for upstream failures.
 
-Deployment (Vercel)
+---
 
-⃣ Install Vercel CLI
+## ☁️ Deployment (Vercel)
+
+### Install Vercel CLI
+
 npm install -g vercel
-⃣ Login:
+
+
+### Login
+
 vercel login
-️Deploy:
+
+
+### Deploy
+
 vercel
 
-For production deployment:
+
+### Production Deployment
 
 vercel --prod
 
 
-Database (Neon PostgreSQL)
-Serverless PostgreSQL
-SSL enabled
-Compatible with Vercel
-Connected via psycopg[binary]
+---
 
+## Database (Neon PostgreSQL)
 
-Task Compliance Checklist
-✔ FastAPI backend
-✔ RESTful endpoints
-✔ PostgreSQL persistence
-✔ UTC ISO 8601 timestamps
-✔ Deployed on Vercel
-✔ Clean architecture
-✔ Submission-ready documentation
+- Serverless PostgreSQL
+- SSL enabled
+- Compatible with Vercel
+- Connected via `psycopg[binary]`
 
+---
 
-Author:
+## Task Compliance Checklist
 
-Emmanuel Adekoya
+- ✔ FastAPI backend  
+- ✔ RESTful endpoints  
+- ✔ PostgreSQL persistence  
+- ✔ UTC ISO 8601 timestamps  
+- ✔ Deployed on Vercel  
+- ✔ Clean architecture  
+- ✔ Submission-ready documentation  
+
+---
+
+## Author
+
+**Emmanuel Adekoya**  
 HNG Internship — Backend Engineering Track
