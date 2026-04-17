@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer, Float
+from sqlalchemy import Column, String, Integer, Float, DateTime
 from database import Base
 
 class Profile(Base):
@@ -17,4 +17,4 @@ class Profile(Base):
     country_id = Column(String, nullable=False)
     country_probability = Column(Float, nullable=False)
 
-    created_at = Column(String, nullable=False)
+    created_at = Column(DateTime(timezone=True), nullable=False)
